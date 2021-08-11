@@ -1,0 +1,12 @@
+.main__nav{
+    height: 50px;
+    background-color: silver;
+}
+.main__body{
+    background-color: white;
+    height: 960px;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

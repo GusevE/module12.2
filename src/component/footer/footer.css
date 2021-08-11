@@ -1,0 +1,12 @@
+.footer{
+    width: 100%;
+    background-color: rgb(65,65,65);
+    height: 50px;
+}
+
+
+.title{
+    margin-left: 50px;
+    margin-top: 15px;
+   color: rgb(150,69,71);
+}
