@@ -33,6 +33,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
+              localIdentName: '[name]-[local]',
               modules: true
             }
           }
@@ -43,5 +44,7 @@ module.exports = {
         use: ["file-loader"]
       }
     ]
+    
   }
+  
 };

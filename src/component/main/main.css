@@ -1,6 +1,7 @@
-.main__nav{
+.main{
     height: 50px;
     background-color: silver;
+   
 }
 .main__body{
     background-color: white;
@@ -9,4 +10,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+img{
+    width: 250px;
+}
+.block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.genres{
+    margin-top: 5px;
+}
+.date{
+    margin-left: 180px;
 }
