@@ -29,3 +29,9 @@ img{
 .date{
     margin-left: 180px;
 }
+.block{
+     display:flex;
+     justify-Content: space-evenly;
+     flex-wrap: wrap;
+}
+

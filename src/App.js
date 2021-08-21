@@ -1,5 +1,5 @@
-import Header from "./component/header/app.component";
-import styles  from "./component/header/app.component.css";
+import Header from "./component/header/header";
+import styles  from "./component/header/header";
 import Main  from "./component/main/main";
 import Footer  from "./component/footer/footer";
 import { useState, useEffect } from 'react';
@@ -12,7 +12,7 @@ export default () =>{
 
     const [Data, setData] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => { 
         console.log('fetch')
         
             fetch(`https://react-cdp-api.herokuapp.com/movies/`)
@@ -40,7 +40,7 @@ export default () =>{
                  <Main  data ={Data}/>
                 <Footer />
     
-        </div>,
+        </div>
        </> 
     )
 }
