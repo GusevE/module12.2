@@ -1,0 +1,8 @@
+.main{
+    display: flex;
+    height: 50px;
+    background-color: silver;
+}
+.item{
+    margin-left: 50px;
+}

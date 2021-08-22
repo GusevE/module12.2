@@ -2,41 +2,54 @@ import Header from "./component/header/header";
 import styles  from "./component/header/header";
 import Main  from "./component/main/main";
 import Footer  from "./component/footer/footer";
-import { useState, useEffect } from 'react';
+import Nav  from "./component/nav/nav";
+import { useState } from 'react';
 
 
-let AllData = [];
+let sort = 'release_date'
 
 export default () =>{
-
-
     const [Data, setData] = useState([]);
 
-    useEffect(() => { 
-        console.log('fetch')
-        
-            fetch(`https://react-cdp-api.herokuapp.com/movies/`)
-            .then(response => response.json())
-            .then(json => {
-                console.log(json)
-                AllData = [ ...json.data ];
-                setData(json.data);
-            })
-        
-        
-    }, []);
+    const [Filter, setFilter] = useState({
+        value: '',
+        type: 'title'
+    })
 
-    function searchFilm(value){
-        
-        let result = !value ? AllData : AllData.filter((elem)=> elem.title.toLowerCase() == value.toLowerCase())
-        setData(result)
+    console.log(Filter);
+
+    function inputSearch(key, value)
+    {
+        setFilter({ ...Filter, [key]: value });
     }
 
+    function searchFilm(){
+        
+
+        let url = `http://react-cdp-api.herokuapp.com/movies?sortBy=${ sort }&sortOrder=desc&search=${ Filter.value }&searchBy=${ Filter.type }`
+
+        console.log(url);
+
+        fetch(url)
+        .then(response => response.json())
+        .then(json => {
+
+            console.log(json.data);
+            setData(json.data);
+        })
+    }
+    function sortBy(value)
+    {
+        sort = value;
+
+        searchFilm();
+    }
     return (
 
         <>
         <div className={styles.wrapper}> 
-                 <Header search={searchFilm} />
+                 <Header search={searchFilm} input={ inputSearch } />
+                 <Nav sort={ sortBy } count={ Data.length}/>
                  <Main  data ={Data}/>
                 <Footer />
     
