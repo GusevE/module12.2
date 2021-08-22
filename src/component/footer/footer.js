@@ -1,9 +1,9 @@
 import React from "react";
-import s  from './footer.css'
+import './footer.css'
 function Footer (){
   return (
-        <div className={s.footer}>
-            <div className={s.title}>  netflixroulette </div>
+        <div className="footer">
+            <div className="title">  netflixroulette </div>
         </div>
          )
                   }

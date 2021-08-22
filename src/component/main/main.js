@@ -1,11 +1,11 @@
 import Film from './Film'
-import styles  from './main.css'
+import './main.css'
 
 
 export default (props) => {
 
     return (
-                  <div className={styles.block}>
+             <div className="block">
 
 {            props.data.length ?      
              props.data.map((elem, inx) => (
@@ -13,7 +13,7 @@ export default (props) => {
             ))
         
                 :
-            <h1>No films</h1>
+            <div className="film">No films</div>
     }   
 
 </div>

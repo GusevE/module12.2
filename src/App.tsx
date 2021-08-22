@@ -1,12 +1,12 @@
 import Header from "./component/header/header";
-import styles  from "./component/header/header";
+import  "./component/header/header.css";
 import Main  from "./component/main/main";
 import Footer  from "./component/footer/footer";
 import Nav  from "./component/nav/nav";
-import { useState } from 'react';
+import React, {useState} from 'react';
+    
 
-
-let sort = 'release_date'
+let sort: string  = 'release_date'
 
 export default () =>{
     const [Data, setData] = useState([]);
@@ -18,7 +18,7 @@ export default () =>{
 
     console.log(Filter);
 
-    function inputSearch(key, value)
+    function inputSearch(key: any, value: any)
     {
         setFilter({ ...Filter, [key]: value });
     }
@@ -38,21 +38,19 @@ export default () =>{
             setData(json.data);
         })
     }
-    function sortBy(value)
+    function sortBy(value:string)
     {
         sort = value;
 
         searchFilm();
     }
     return (
-
-        <>
-        <div className={styles.wrapper}> 
+         <>
+        <div className="wrapper">
                  <Header search={searchFilm} input={ inputSearch } />
                  <Nav sort={ sortBy } count={ Data.length}/>
                  <Main  data ={Data}/>
                 <Footer />
-    
         </div>
        </> 
     )

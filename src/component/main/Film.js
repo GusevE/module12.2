@@ -1,13 +1,13 @@
-import styles  from './main.css'
+import './main.css'
 
 export default (props) => {
 
     return (
-                  <div className={styles.item}>
+                  <div className="item">
                         <img src={props.poster}/>
-                        <div className={styles.title}>{ props.title }</div>
-                        <div className={styles.genres}>{ props.genres.splice(1,2).join(' ') } </div>
-                        <div className={styles.date}>{ props.date.slice(0,4)} </div>
+                        <div className="title">{ props.title }</div>
+                        <div className="genres">{ props.genres.splice(1,2).join(' ') } </div>
+                        <div className="date">{ props.date.slice(0,4)} </div>
                     </div>
            
       )
