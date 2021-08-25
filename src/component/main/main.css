@@ -22,18 +22,32 @@ img{
     flex-wrap: wrap;
 }
 .item{
+    position: relative;
+    width: 250px;
     margin-top: 20px;
     margin-left: 20px;
 }
 .genres{
     margin-top: 5px;
+    font-size: 15px;
+
 }
 .date{
-    margin-left: 180px;
+    position: absolute;
+    right: 0;
+    border: 1px solid black;
+    padding: 4px;
+
 }
 .block{
      display:flex;
      justify-Content: space-evenly;
      flex-wrap: wrap;
 }
-
+.title__item{
+    width: 200px;
+    font-size: 20px;
+}
+.item_block{
+    display: flex;
+}

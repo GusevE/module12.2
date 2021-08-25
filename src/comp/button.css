@@ -1,0 +1,28 @@
+.btn {
+    position: relative;
+    padding: 10px 15px;
+    background-color: rgb(60,60,60);
+    border: none;
+    color: #FFF;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background-color: #b6d2e5;
+    color: black;
+  }
+  
+  .btn[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  
+  .btn.active {
+    background-color: rgb(245 86 103);
+    border: 1px solid #5EB2F2;
+    box-shadow: 0px 0 2px 0px #C0C0C0;
+  }

@@ -1,12 +1,12 @@
-import Header from "./component/header/header";
+import Header from "./component/header/";
 import  "./component/header/header.css";
 import Main  from "./component/main/main";
-import Footer  from "./component/footer/footer";
-import Nav  from "./component/nav/nav";
+import Footer  from "./component/footer/";
+import Nav  from "./component/nav/";
 import React, {useState} from 'react';
     
 
-let sort: string  = 'release_date'
+let sort: any  = 'release_date'
 
 export default () =>{
     const [Data, setData] = useState([]);

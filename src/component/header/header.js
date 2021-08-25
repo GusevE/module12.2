@@ -1,27 +1,39 @@
-import {useState} from "react";
+import { useState, useMemo} from "react";
 import './header.css'
-function Header (props){
+import Button from '../../comp/button'
+function Header ({input, search}){
+  const titleClick = useMemo (() => input ('type', 'genres'), []);
+  const genereClick = useMemo (() => input ('type', 'genres'), []);
+
+  const [active, setActive] = useState(false);
+
+  function clickBtn(value, cb)
+  {
+    setActive(value);
+
+    input('type', value ? 'genres' : 'title');
+  }
+
 
   return (
-     <div style={{ 
-      backgroundImage: `url(http://manikyres.ru/wp-content/uploads/2019/01/post_5c4e2dd3cba36.jpeg)` 
-    }} className="container">
+     <div  className="container">
       <div   className="header" >
         <div className="header__logo"> netflixroulette</div>
         <div className="header__title"> Find your movie</div>
         
         <label>
-        <input type="search" className="header__input" placeholder="Quentin Terantino" onChange={(e)=>props.input( 'value', e.target.value )}  />
+        <input type="search" className="header__input" placeholder="Quentin Terantino" onChange={(e)=> input( 'value', e.target.value )}  />
         </label>
         
         < div className="search">
             <div className="search__title">search by </div>
-            <button type="button" className="btn" onClick={ () => props.input( 'type', 'title' )}> Title</button>
-            <button type="button" className="btn" onClick={ () => props.input( 'type', 'genres' )}> Genre</button>
-            <button type="button" className="btn__search" onClick={ props.search }> search</button>
+              
+            <Button className={ !active ? `active` : null } onClick={ () => clickBtn(false) }> Title</Button>
+            <Button className={ active ? `active` : null }  onClick={ () => clickBtn(true) }> Genre</Button>
+            <Button className="active" id="btn__search" onClick={search }> search</Button>
             </div>
             </div>
-      </div>
+          </div>
       
          )
                   }
