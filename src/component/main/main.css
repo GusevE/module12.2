@@ -1,10 +1,4 @@
-.film{
-    font-size: 60px;
-    display: flex;
-    height: 600px;
-    justify-content: center;
-  align-items: center;
-}
+
 .main__body{
     background-color: white;
     height: 960px;

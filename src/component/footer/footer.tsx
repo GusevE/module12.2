@@ -1,10 +1,8 @@
 import React from "react";
-import './footer.css'
+import Text from '../../comp/text/text'
 function Footer (){
   return (
-        <div className="footer">
-            <div className="title">  netflixroulette </div>
-        </div>
+        <Text />
          )
                   }
 export default Footer

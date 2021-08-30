@@ -50,7 +50,7 @@ export default () =>{
                  <Header search={searchFilm} input={ inputSearch } />
                  <Nav sort={ sortBy } count={ Data.length}/>
                  <Main  data ={Data}/>
-                <Footer />
+                 <Footer />
         </div>
        </> 
     )

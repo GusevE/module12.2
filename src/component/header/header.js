@@ -1,9 +1,12 @@
-import { useState, useMemo} from "react";
+import { useState, useMemo, useCallback} from "react";
 import './header.css'
-import Button from '../../comp/button'
+import Button from '../../comp/button/button'
+import Search from '../../comp/search/search'
 function Header ({input, search}){
   const titleClick = useMemo (() => input ('type', 'genres'), []);
   const genereClick = useMemo (() => input ('type', 'genres'), []);
+ 
+
 
   const [active, setActive] = useState(false);
 
@@ -13,7 +16,7 @@ function Header ({input, search}){
 
     input('type', value ? 'genres' : 'title');
   }
-
+  
 
   return (
      <div  className="container">
@@ -21,9 +24,12 @@ function Header ({input, search}){
         <div className="header__logo"> netflixroulette</div>
         <div className="header__title"> Find your movie</div>
         
-        <label>
+        
+        <Search onChange={(e)=> input( 'value', e.target.value )}  />
+        {/* <label>
         <input type="search" className="header__input" placeholder="Quentin Terantino" onChange={(e)=> input( 'value', e.target.value )}  />
-        </label>
+        </label> */}
+        
         
         < div className="search">
             <div className="search__title">search by </div>
