@@ -1,10 +1,15 @@
+import { any } from "prop-types";
 import React from "react";
 import './search.css'
-function Search (){
+
+interface IProp{
+   onChange:any
+}
+function Search ({onChange} :IProp){
    
   return (
         <label>
-           <input type="search" className="header__input" placeholder="Quentin Terantino"  />
+           <input onChange={onChange} type="search" className="header__input" placeholder="Quentin Terantino"  />
             </label>
          )
                   }

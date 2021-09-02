@@ -1,7 +1,7 @@
 import React from "react";
 import './noFilms.css'
-function noFilms (){
+export  default ()=> {
   return (
     <div className="film">No films</div>
 )}
-export default noFilms
+

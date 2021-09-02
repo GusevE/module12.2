@@ -1,5 +1,6 @@
 import React from "react";
-import Text from '../../comp/text/text'
+import Text from "../../comp/text";
+
 function Footer (){
   return (
         <Text />

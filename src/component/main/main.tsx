@@ -1,6 +1,7 @@
+import NoFilms from '../../comp/NoFilms'
 import Film from './Film'
 import './main.css'
-import NoFilms from "../../comp/noFilms/noFilms"
+
 
 export default (props:any) => {
 

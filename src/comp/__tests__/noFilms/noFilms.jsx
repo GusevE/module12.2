@@ -1,6 +1,6 @@
 import React from "react";
 import {render} from '@testing-library/react'
-import NoFilms from "../../noFilms/noFilms"
+import NoFilms from "../../NoFilms/noFilms"
 
 test ('Тест записи', ()=> {
     const component = render(<NoFilms />);
