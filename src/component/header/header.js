@@ -1,23 +1,48 @@
 import { useState, useCallback} from "react";
+import { useSelector, useDispatch } from "react-redux";
 import './header.css'
 
 import Button from "../../comp/button";
 import Search from "../../comp/search";
 
-function Header ({input, search}){
-  useCallback (() => input ('type', 'genres'), []);
-  useCallback (() => input ('type', 'genres'), []);
+function Header ({search}){
  
 
   const [active, setActive] = useState(false);
+  const dispatch = useDispatch();
+  const state = useSelector(state => state);
+
+  console.log(state);
+
 
   function clickBtn(value, cb)
   {
     setActive(value);
 
-    input('type', value ? 'genres' : 'title');
+    dispatch({type: 'CHANGE_TYPE', payload: value ? 'genres' : 'title'})
+
+    // input('type', value ? 'genres' : 'title');
   }
-  
+
+  function searchFilm(){
+
+        
+    let url = `http://react-cdp-api.herokuapp.com/movies?sortBy=${ state.sort }&sortOrder=desc&search=${ state.value }&searchBy=${ state.type }`
+
+    console.log(url);
+
+    fetch(url)
+    .then(response => response.json())
+    .then(json => {
+
+        console.log(json.data);
+        // setData(json.data);
+
+        dispatch({type: 'SEARCH_FILM', payload: json.data});
+    })
+}
+
+
 
   return (
      <div  className="container">
@@ -26,9 +51,9 @@ function Header ({input, search}){
         <div className="header__title"> Find your movie</div>
         
         
-        <Search onChange={(e)=> input( 'value', e.target.value )}  />
+        {/* <Search onChange={(e)=> input( 'value', e.target.value )}  /> */}
         
-        
+        <Search onChange={ (e) => dispatch({type: 'CHANGE_VALUE', payload: e.target.value})} />
         
         < div className="search">
             <div className="search__title">search by </div>
