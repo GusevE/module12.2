@@ -24,23 +24,7 @@ function Header ({search}){
     // input('type', value ? 'genres' : 'title');
   }
 
-  function searchFilm(){
-
-        
-    let url = `http://react-cdp-api.herokuapp.com/movies?sortBy=${ state.sort }&sortOrder=desc&search=${ state.value }&searchBy=${ state.type }`
-
-    console.log(url);
-
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
-
-        console.log(json.data);
-        // setData(json.data);
-
-        dispatch({type: 'SEARCH_FILM', payload: json.data});
-    })
-}
+  
 
 
 
