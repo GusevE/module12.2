@@ -5,26 +5,16 @@ import Footer  from "./component/footer";
 import Nav  from "./component/nav";
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import HeaderRouter from "./component/HeaderRouter";
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import { Components } from "antd/lib/date-picker/generatePicker";
 
-    
 
-// let sort: any  = 'release_date'
+
 
 
 export default () =>{
-    // const [Data, setData] = useState([]);
-
-    // const [Filter, setFilter] = useState({
-    //     value: '',
-    //     type: 'title'
-    // })
-
-    // console.log(Filter);
-
-    // function inputSearch(key: any, value: any)
-    // {
-    //     setFilter({ ...Filter, [key]: value });
-    // }
+   
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
@@ -43,8 +33,7 @@ export default () =>{
         .then(json => {
 
             console.log(json.data);
-            // setData(json.data);
-
+           
             dispatch({type: 'SEARCH_FILM', payload: json.data});
         })
     }
@@ -54,14 +43,57 @@ export default () =>{
 
         searchFilm();
     }
+    
+    
     return (
          <>
+         <BrowserRouter>
         <div className="wrapper">
-                 <Header search={ searchFilm }/>
-                 <Nav sort={ sortBy } />
-                 <Main />
+                <Switch>
+
+                    <Route path="/" exact>
+                        <>
+                        <Header search={ searchFilm }/>
+                        <Nav sort={ sortBy } />
+                        <Main />
+                        </>
+                    </Route>
+
+                    <Route path="/film/:id" exact>
+                        <>
+                            <HeaderRouter />
+                            <Nav />
+                            <Main />
+                           
+                        </>
+                    </Route>
+                
+                </Switch>
+
+
+                 
                  <Footer />
+                 
         </div>
+           
+        </BrowserRouter>
        </> 
     )
 }
+
+
+// <BrowserRouter>
+
+//     <Switch>
+
+//         <Route>
+//             <Component1 />
+//         </Route>
+
+//         <Route>
+//             <Component2 />
+//         </Route>
+
+//     </Switch>
+
+// </BrowserRouter>

@@ -1,0 +1,81 @@
+.container_one{
+    background: url(../../netflix.jpg)no-repeat center center, #555555;
+    background-blend-mode: multiply;
+    background-size: 150%;
+    height: 700px; 
+ }
+ .header__logo{
+    color: rgb(245 86 103);
+    margin-left: 100px;
+    padding-top: 15px;
+    font-size: 30px;
+}
+.container_text{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 15px;
+   color: rgb(245 86 103);
+   font-size: 30px;
+   padding-left: 30px;
+   padding-top: 15px;
+}
+.block_img{
+   margin-top: 90px;
+   margin-left: 50px;
+}
+.blo_img{
+    width: 320px;
+}
+.block_one{
+    display: flex;
+}
+.block_title{
+    position: relative;
+    color: rgb(245 86 103);
+    font-size: 30px;
+    
+}
+.block_two{
+    margin-left: 50px;
+    margin-top: 100px;
+}
+.vote_average{
+    height: 30px;
+    padding: 19px;
+    border-radius: 50%;
+    border: 3px solid green;
+    color: cornsilk;
+    font-size: 25px;
+    margin-left: 15px;
+    margin-top: -17px;
+
+}
+.release_date{
+    color:honeydew;
+  
+}
+
+.block_four{
+    display: flex;
+    color:honeydew;
+    margin-top: 15px;
+}
+.runtime{
+    margin-left: 120px;
+}
+.block_three{
+    font-size: 20px;
+    width: 700px;
+    margin-top: 30px;
+    color:honeydew;
+}
+.block_two_title{
+    display: flex;
+}
+.btnheader{
+    position: absolute;
+    width: 140px;
+    height: 35px;
+    right: 20px;
+    margin-top: 20px;
+}

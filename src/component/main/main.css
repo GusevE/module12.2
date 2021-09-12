@@ -15,6 +15,7 @@ img{
     display: flex;
     flex-wrap: wrap;
 }
+a { text-decoration: none; }
 .item{
     position: relative;
     width: 250px;
@@ -43,5 +44,6 @@ img{
     font-size: 20px;
 }
 .item_block{
+    color: black;
     display: flex;
 }
